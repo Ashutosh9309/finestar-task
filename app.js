@@ -1,7 +1,5 @@
 const express = require('express');
-const path = require('path');
 const expressValidator = require('express-validator');
-const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const connectDB = require('./config/database');
@@ -17,10 +15,6 @@ const app = express();
 
 // Bring in Models
 let { Article } = require('./models/article');
-
-// Load View Engine
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
 
 // Body Parser Middleware
 // parse application/x-www-form-urlencoded
