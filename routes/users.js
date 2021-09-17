@@ -24,9 +24,7 @@ router.post('/register', async (req, res) => {
   let errors = req.validationErrors();
 
   if (errors) {
-    res.render('register', {
-      errors: errors
-    });
+    res.send(errors);
   } else {
     const salt = await bcrypt.genSalt(10);
     const newUser = await User.create({
