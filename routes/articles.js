@@ -26,8 +26,7 @@ router.post('/add', async (req, res) => {
         body: req.body.body,
       });
       article.save();
-      req.flash('success', 'Article Added');
-      res.redirect('/');
+      res.send(article);
     }
   } catch (e) {
     res.send(e);
@@ -49,8 +48,7 @@ router.post('/edit/:id', async (req, res) => {
 
     const update = await Article.update(query, article);
     if (update) {
-      req.flash('success', 'Article Updated');
-      res.redirect('/');
+      res.redirect('Updated');
     } return;
 
   } catch (e) {
