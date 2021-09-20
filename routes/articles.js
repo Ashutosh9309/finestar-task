@@ -48,7 +48,7 @@ router.post('/edit/:id', async (req, res) => {
 
     const update = await Article.update(query, article);
     if (update) {
-      res.redirect('Updated');
+      res.send('Updated');
     } return;
 
   } catch (e) {
