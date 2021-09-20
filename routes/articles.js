@@ -15,7 +15,7 @@ router.post('/add', async (req, res) => {
     let errors = req.validationErrors();
 
     if (errors) {
-      res.render('add_article', {
+      res.send( {
         title: 'Add Article',
         errors: errors
       });
